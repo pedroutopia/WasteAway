@@ -23,7 +23,7 @@ export default function Login() {
                             <TextInput style={styles.placeHolder} placeholder='Digite seu e-mail...' placeholderTextColor="#FFF"></TextInput>
 
                             <Text style={styles.inputTitle}>Senha</Text>
-                            <TextInput style={styles.placeHolder} placeholder='Digite sua senha...' placeholderTextColor="#FFF"></TextInput>
+                            <TextInput style={styles.placeHolder} secureTextEntry={true} placeholder='Digite sua senha...' placeholderTextColor="#FFF"></TextInput>
                         </View>
 
                         <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
