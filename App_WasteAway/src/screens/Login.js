@@ -1,14 +1,18 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Button, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function Login() {
+
+    const navigation = useNavigation()
+
     return (
         <>
             <View style={styles.containerFather}>
 
-                <View style={styles.header}>
+                {/* <View style={styles.header}>
                     <Text style={styles.title}>Login</Text>
-                </View>
+                </View> */}
 
                 <View style={styles.container}>
 
@@ -24,7 +28,7 @@ export default function Login() {
 
                         <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
 
-                        <TouchableOpacity style={styles.button}>
+                        <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
                             <Text style={styles.buttonText}>Acessar</Text>
                         </TouchableOpacity>
 
@@ -53,18 +57,18 @@ export default function Login() {
 const styles = StyleSheet.create({
     containerFather: {
         backgroundColor: "#FA5F49",
-        paddingBottom: 40,
+        paddingVertical: 40,
     },
     header: {
         alignItems: "center",
     },
-    title: {
-        marginTop: 60,
-        marginBottom: 40,
-        fontSize: 30,
-        color: '#FFF',
-        fontWeight: '700',
-    },
+    // title: {
+    //     marginTop: 60,
+    //     marginBottom: 40,
+    //     fontSize: 30,
+    //     color: '#FFF',
+    //     fontWeight: '700',
+    // },
     container: {
         alignItems: 'center',
 
@@ -108,6 +112,7 @@ const styles = StyleSheet.create({
     },
     buttonText: {
         color: '#FFF',
+        
     },
     loginRedes: {
         flexDirection: 'row',
