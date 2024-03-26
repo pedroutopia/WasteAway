@@ -1,6 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { Button, Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function Login() {
 
@@ -9,10 +8,6 @@ export default function Login() {
     return (
         <>
             <View style={styles.containerFather}>
-
-                {/* <View style={styles.header}>
-                    <Text style={styles.title}>Login</Text>
-                </View> */}
 
                 <View style={styles.container}>
 
