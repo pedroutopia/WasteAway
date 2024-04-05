@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function Login() {
 
@@ -9,7 +9,6 @@ export default function Login() {
         <>
 
             <View style={styles.containerFather}>
-                <ScrollView style={styles.scrollView}>
                     <View style={styles.mainContent}>
 
                         <View style={styles.inputsBox}>
@@ -38,7 +37,6 @@ export default function Login() {
                             </View>
                         </View>
                     </View>
-                </ScrollView>
             </View>
 
 
@@ -50,17 +48,13 @@ const styles = StyleSheet.create({
 
     containerFather: {
         flex: 1,
-        backgroundColor: "#ccc",
+        backgroundColor: "#FA5F49",
         justifyContent: 'center',
         padding: 30,
     },
-    scrollView: {
-        backgroundColor: 'pink',
-    },
-
     mainContent: {
-        width: '100%',
-        padding: 10,
+        padding: 20,
+        paddingVertical: 40,
         backgroundColor: '#FFF',
         borderRadius: 10,
         flexDirection: 'column',
@@ -72,6 +66,8 @@ const styles = StyleSheet.create({
     },
     inputTitle: {
         fontSize: 18,
+        fontWeight: '500',
+        marginBottom: 10,
 
     },
     placeHolder: {
@@ -80,15 +76,16 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         padding: 16,
         color: '#fff',
-        marginBottom: 30,
+        marginBottom: 50,
+        fontWeight: '500',
     },
     forgotPassword: {
         textDecorationLine: 'underline',
         fontSize: 14,
         color: '#44436C',
         alignSelf: 'flex-end',
-        marginBottom: 30,
-        marginTop: -30,
+        marginBottom: 40,
+        marginTop: -40,
 
     },
     button: {
@@ -97,12 +94,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding: 10,
         borderRadius: 50,
-        marginBottom: 30
     },
     buttonText: {
         color: '#FFF',
+        fontWeight: '500',
     },
     logoContainer: {
+        marginTop: 40,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center'
@@ -112,7 +110,7 @@ const styles = StyleSheet.create({
         width: 50,
     },
     imgLogoEsc: {
-        height: 200,
+        height: 50,
         width: 200,
     }
 })
