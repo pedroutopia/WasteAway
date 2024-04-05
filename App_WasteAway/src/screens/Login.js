@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function Login() {
 
@@ -7,10 +7,9 @@ export default function Login() {
 
     return (
         <>
+
             <View style={styles.containerFather}>
-
-                <View style={styles.container}>
-
+                <ScrollView style={styles.scrollView}>
                     <View style={styles.mainContent}>
 
                         <View style={styles.inputsBox}>
@@ -19,67 +18,60 @@ export default function Login() {
 
                             <Text style={styles.inputTitle}>Senha</Text>
                             <TextInput style={styles.placeHolder} secureTextEntry={true} placeholder='Digite sua senha...' placeholderTextColor="#FFF"></TextInput>
+                            <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
                         </View>
 
-                        <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
-
-                        <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
-                            <Text style={styles.buttonText}>Acessar</Text>
-                        </TouchableOpacity>
-
-                        <Text style={styles.textDecoration}>OU</Text>
-                        <Text style={styles.textDecoration}>Login com</Text>
-
-                        <View style={styles.loginRedes}>
-                            <View>
-                                <Image source={require('../assets/Google.png')} />
-                            </View>
-                            <View style={styles.facebookImg}>
-                                <Image source={require('../assets/Facebook.png')} />
-                            </View>
+                        <View style={styles.button}>
+                            <TouchableOpacity onPress={() => navigation.navigate('Home')} >
+                                <Text style={styles.buttonText}>Acessar</Text>
+                            </TouchableOpacity>
                         </View>
-
                     </View>
 
-                </View>
-
+                    <View>
+                        <View style={styles.logoContainer}>
+                            <View>
+                                <Image style={styles.imgLogoPic} resizeMode='center' source={require('../assets/WasteAway-logo-pictória-BRANCA.png')} />
+                            </View>
+                            <View>
+                                <Image style={styles.imgLogoEsc} resizeMode='center' source={require('../assets/WasteAway-logo-escrita-BRANCA.png')} />
+                            </View>
+                        </View>
+                    </View>
+                </ScrollView>
             </View>
+
 
         </>
     );
 }
 
 const styles = StyleSheet.create({
-    containerFather: {
-        backgroundColor: "#FA5F49",
-        paddingVertical: 40,
-    },
-    header: {
-        alignItems: "center",
-    },
-    // title: {
-    //     marginTop: 60,
-    //     marginBottom: 40,
-    //     fontSize: 30,
-    //     color: '#FFF',
-    //     fontWeight: '700',
-    // },
-    container: {
-        alignItems: 'center',
 
+    containerFather: {
+        flex: 1,
+        backgroundColor: "#ccc",
+        justifyContent: 'center',
+        padding: 30,
     },
+    scrollView: {
+        backgroundColor: 'pink',
+    },
+
     mainContent: {
-        width: 350,
-        padding: 20,
+        width: '100%',
+        padding: 10,
         backgroundColor: '#FFF',
         borderRadius: 10,
+        flexDirection: 'column',
         alignItems: 'center',
-
+        justifyContent: 'center',
+    },
+    inputsBox: {
+        width: '100%',
     },
     inputTitle: {
         fontSize: 18,
-        width: 300,
-        marginTop: 50
 
     },
     placeHolder: {
@@ -88,39 +80,40 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         padding: 16,
         color: '#fff',
+        marginBottom: 30,
     },
     forgotPassword: {
         textDecorationLine: 'underline',
         fontSize: 14,
         color: '#44436C',
-        marginLeft: 150,
-        marginBottom: 50,
+        alignSelf: 'flex-end',
+        marginBottom: 30,
+        marginTop: -30,
 
     },
     button: {
+        width: '60%',
         backgroundColor: '#FA5F49',
         alignItems: 'center',
-        width: 150,
         padding: 10,
         borderRadius: 50,
         marginBottom: 30
     },
     buttonText: {
         color: '#FFF',
-        
     },
-    loginRedes: {
+    logoContainer: {
         flexDirection: 'row',
-        marginTop: 40,
-        marginBottom: 40,
+        justifyContent: 'center',
+        alignItems: 'center'
     },
-    textDecoration: {
-        color: '#8C8CB0',
-        marginTop: 10,
-        fontWeight: '800'
+    imgLogoPic: {
+        height: 50,
+        width: 50,
     },
-    facebookImg: {
-        marginLeft: 30,
+    imgLogoEsc: {
+        height: 200,
+        width: 200,
     }
 })
 
