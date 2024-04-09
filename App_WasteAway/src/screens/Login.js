@@ -1,5 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Login() {
 
@@ -7,27 +8,28 @@ export default function Login() {
 
     return (
         <>
+            <SafeAreaView style={styles.container}>
+                <ScrollView contentContainerStyle={styles.scrollContent}>
 
-            <View style={styles.containerFather}>
-                    <View style={styles.mainContent}>
+                    <View style={styles.insideScroll}>
+                        <View style={styles.mainContent}>
 
-                        <View style={styles.inputsBox}>
-                            <Text style={styles.inputTitle}>E-mail</Text>
-                            <TextInput style={styles.placeHolder} placeholder='Digite seu e-mail...' placeholderTextColor="#FFF"></TextInput>
+                            <View style={styles.inputsBox}>
+                                <Text style={styles.inputTitle}>E-mail</Text>
+                                <TextInput style={styles.placeHolder} placeholder='Digite seu e-mail...' placeholderTextColor="#FFF"></TextInput>
 
-                            <Text style={styles.inputTitle}>Senha</Text>
-                            <TextInput style={styles.placeHolder} secureTextEntry={true} placeholder='Digite sua senha...' placeholderTextColor="#FFF"></TextInput>
-                            <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
-                        </View>
-
-                        <View style={styles.button}>
+                                <Text style={styles.inputTitle}>Senha</Text>
+                                <TextInput style={styles.placeHolder} secureTextEntry={true} placeholder='Digite sua senha...' placeholderTextColor="#FFF"></TextInput>
+                                <Text style={styles.forgotPassword}>Esqueceu a senha?</Text>
+                            </View>
                             <TouchableOpacity onPress={() => navigation.navigate('Home')} >
-                                <Text style={styles.buttonText}>Acessar</Text>
+                                <View style={styles.button}>
+
+                                    <Text style={styles.buttonText}>Acessar</Text>
+
+                                </View>
                             </TouchableOpacity>
                         </View>
-                    </View>
-
-                    <View>
                         <View style={styles.logoContainer}>
                             <View>
                                 <Image style={styles.imgLogoPic} resizeMode='center' source={require('../assets/WasteAway-logo-pictória-BRANCA.png')} />
@@ -36,30 +38,46 @@ export default function Login() {
                                 <Image style={styles.imgLogoEsc} resizeMode='center' source={require('../assets/WasteAway-logo-escrita-BRANCA.png')} />
                             </View>
                         </View>
+                        <View>
+
+                        </View>
                     </View>
-            </View>
 
 
+
+                </ScrollView>
+            </SafeAreaView>
         </>
     );
 }
 
 const styles = StyleSheet.create({
 
-    containerFather: {
+    container: {
         flex: 1,
         backgroundColor: "#FA5F49",
         justifyContent: 'center',
-        padding: 30,
+        paddingRight: 30,
+        paddingLeft: 30,
+    },
+    scrollContent: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    insideScroll: {
+        height: 400,
+
     },
     mainContent: {
         padding: 20,
-        paddingVertical: 40,
+        height: 400,
         backgroundColor: '#FFF',
         borderRadius: 10,
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
+        position: 'relative',
+        top: '-20%',
     },
     inputsBox: {
         width: '100%',
@@ -89,10 +107,11 @@ const styles = StyleSheet.create({
 
     },
     button: {
-        width: '60%',
+        width: '100%',
         backgroundColor: '#FA5F49',
         alignItems: 'center',
-        padding: 10,
+        paddingVertical: 10,
+        paddingHorizontal: 30,
         borderRadius: 50,
     },
     buttonText: {
@@ -103,7 +122,7 @@ const styles = StyleSheet.create({
         marginTop: 40,
         flexDirection: 'row',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
     },
     imgLogoPic: {
         height: 50,
