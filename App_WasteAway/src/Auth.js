@@ -76,7 +76,7 @@ function Auth(props) {
                     options={{
                         title: 'Login',
                         headerTitleAlign: 'center',
-                        headerStatusBarHeight: 50,
+                        headerStatusBarHeight: 30,
                         headerStyle: {
                             backgroundColor: '#FA5F49',
                         },
