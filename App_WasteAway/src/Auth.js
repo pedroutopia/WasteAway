@@ -2,15 +2,13 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Login from './screens/Login';
-import {Home} from './screens/Home';
-import {Buscar} from './screens/Buscar';
-import {Cadastro} from './screens/Cadastro';
-import {Carrinho} from './screens/Carrinho';
-import {Pedidos} from './screens/Pedidos';
-import {Perfil} from './screens/Perfil';
+import { Home } from './screens/Home';
+import { Buscar } from './screens/Buscar';
+import { Carrinho } from './screens/Carrinho';
+import { Pedidos } from './screens/Pedidos';
+import { Perfil } from './screens/Perfil';
 
 import { Ionicons } from '@expo/vector-icons';
-import { View } from 'react-native';
 
 
 const Stack = createStackNavigator();
@@ -24,7 +22,7 @@ function Routes() {
                 tabBarActiveBackgroundColor: "#44436C",
                 tabBarActiveTintColor: "#FFF",
                 tabBarInactiveTintColor: "#44436C",
-                tabBarStyle:{
+                tabBarStyle: {
                     position: 'absolute',
                     backgroundColor: '#A3DF99',
                     borderTopWidth: 0,
@@ -38,20 +36,20 @@ function Routes() {
             }}
         >
             <Tab.Screen
-            
+
                 name='Home'
                 component={Home}
                 options={{
                     headerShown: false,
                     tabBarLabel: 'Home',
                     tabBarIcon: ({ color, size, focused }) => {
-                        if(focused){
+                        if (focused) {
                             return <Ionicons name="home" size={size} color={color} />
                         }
                         return <Ionicons name="home-outline" size={size} color={color} />
                     },
-                    
-                  }}
+
+                }}
             />
 
             <Tab.Screen
@@ -61,13 +59,13 @@ function Routes() {
                     headerShown: false,
                     tabBarLabel: 'Buscar',
                     tabBarIcon: ({ color, size, focused }) => {
-                        if(focused){
+                        if (focused) {
                             return <Ionicons name="search" size={size} color={color} />
                         }
                         return <Ionicons name="search-outline" size={size} color={color} />
                     },
-                    
-                  }}
+
+                }}
             />
 
             <Tab.Screen
@@ -77,13 +75,13 @@ function Routes() {
                     headerShown: false,
                     tabBarLabel: 'Carrinho',
                     tabBarIcon: ({ color, size, focused }) => {
-                        if(focused){
+                        if (focused) {
                             return <Ionicons name="cart" size={size} color={color} />
                         }
                         return <Ionicons name="cart-outline" size={size} color={color} />
                     },
-                    
-                  }}
+
+                }}
             />
 
             <Tab.Screen
@@ -93,13 +91,13 @@ function Routes() {
                     headerShown: false,
                     tabBarLabel: 'Pedidos',
                     tabBarIcon: ({ color, size, focused }) => {
-                        if(focused){
+                        if (focused) {
                             return <Ionicons name="clipboard" size={size} color={color} />
                         }
                         return <Ionicons name="clipboard-outline" size={size} color={color} />
                     },
-                    
-                  }}
+
+                }}
             />
 
             <Tab.Screen
@@ -109,13 +107,13 @@ function Routes() {
                     headerShown: false,
                     tabBarLabel: 'Perfil',
                     tabBarIcon: ({ color, size, focused }) => {
-                        if(focused){
+                        if (focused) {
                             return <Ionicons name="person" size={size} color={color} />
                         }
                         return <Ionicons name="person-outline" size={size} color={color} />
                     },
-                    
-                  }}
+
+                }}
             />
         </Tab.Navigator>
     )
@@ -124,28 +122,28 @@ function Routes() {
 
 function Auth() {
     return (
-            <Stack.Navigator >
-                <Stack.Screen name="Login" component={Login}
-                    options={{
-                        headerShown: false,
-                        // title: 'Login',
-                        // headerTitleAlign: 'center',
-                        // headerStatusBarHeight: 30,
-                        // headerStyle: {
-                        //     backgroundColor: '#FA5F49',
-                        // },
-                        // headerTintColor: '#fff',
-                        // headerTitleStyle: {
-                        //     fontWeight: 'bold',
-                        //     fontSize: 30,
-                        // },
-                    }} />
-                <Stack.Screen name="Home" component={Routes}
-                    options={{
-                        headerShown: false,
-                    }}
-                />
-            </Stack.Navigator>
+        <Stack.Navigator >
+            <Stack.Screen name="Login" component={Login}
+                options={{
+                    headerShown: false,
+                    // title: 'Login',
+                    // headerTitleAlign: 'center',
+                    // headerStatusBarHeight: 30,
+                    // headerStyle: {
+                    //     backgroundColor: '#FA5F49',
+                    // },
+                    // headerTintColor: '#fff',
+                    // headerTitleStyle: {
+                    //     fontWeight: 'bold',
+                    //     fontSize: 30,
+                    // },
+                }} />
+            <Stack.Screen name="Home" component={Routes}
+                options={{
+                    headerShown: false,
+                }}
+            />
+        </Stack.Navigator>
     );
 }
 
