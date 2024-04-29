@@ -2,6 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Login from './screens/Login';
+import { Cadastro } from './screens/Cadastro';
 import { Home } from './screens/Home';
 import { Buscar } from './screens/Buscar';
 import { Carrinho } from './screens/Carrinho';
@@ -141,6 +142,10 @@ function Auth() {
             <Stack.Screen name="Home" component={Routes}
                 options={{
                     headerShown: false,
+                }}
+            />
+            <Stack.Screen name="Cadastro" component={Cadastro}
+                options={{
                 }}
             />
         </Stack.Navigator>
