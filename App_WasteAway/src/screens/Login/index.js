@@ -1,5 +1,5 @@
 import { useNavigation } from '@react-navigation/native';
-import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, ScrollView } from 'react-native';
+import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Login() {
@@ -9,7 +9,6 @@ export default function Login() {
     return (
         <>
             <SafeAreaView style={styles.container}>
-                <ScrollView contentContainerStyle={styles.scrollContent}>
 
                     <View style={styles.insideScroll}>
                         <View style={styles.mainContent}>
@@ -32,20 +31,16 @@ export default function Login() {
                         </View>
                         <View style={styles.logoContainer}>
                             <View>
-                                <Image style={styles.imgLogoPic} resizeMode='center' source={require('../assets/WasteAway-logo-pictória-BRANCA.png')} />
+                                <Image style={styles.imgLogoPic} resizeMode='center' source={require('../../assets/WasteAway-logo-pictória-BRANCA.png')} />
                             </View>
                             <View>
-                                <Image style={styles.imgLogoEsc} resizeMode='center' source={require('../assets/WasteAway-logo-escrita-BRANCA.png')} />
+                                <Image style={styles.imgLogoEsc} resizeMode='center' source={require('../../assets/WasteAway-logo-escrita-BRANCA.png')} />
                             </View>
                         </View>
                         <View>
 
                         </View>
                     </View>
-
-
-
-                </ScrollView>
             </SafeAreaView>
         </>
     );
