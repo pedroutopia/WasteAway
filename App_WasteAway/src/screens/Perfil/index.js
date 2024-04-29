@@ -1,7 +1,7 @@
 import { Text } from "react-native";
 
-export function Home() {
+export function Perfil () {
     return (
-        <Text>Home caralho</Text>
+        <Text>Perfil</Text>
     )
 }
