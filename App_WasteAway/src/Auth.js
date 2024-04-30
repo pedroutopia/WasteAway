@@ -20,7 +20,7 @@ function Routes() {
         <Tab.Navigator
 
             screenOptions={{
-                tabBarActiveBackgroundColor: "#44436C",
+                tabBarActiveBackgroundColor: "#44436c",
                 tabBarActiveTintColor: "#FFF",
                 tabBarInactiveTintColor: "#44436C",
                 tabBarStyle: {
