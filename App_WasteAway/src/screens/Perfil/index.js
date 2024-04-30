@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } 
-from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions }
+    from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import LogoTopo from '../../components/LogoTopo';
 
 export function Perfil() {
     const [editing, setEditing] = useState(false);
@@ -13,42 +14,45 @@ export function Perfil() {
     };
 
     return (
-        <View style={styles.container}>
-            <View style={styles.card}>
-                <View style={styles.userInfoContainer}>
-                    <Image source={require('../../assets/Perfil.png')} style={styles.profileImage} />
-                    <Text style={styles.greetingText}>Olá, <Text style={styles.userName}>{nome}</Text>!</Text>
-                </View>
+        <>
+            <LogoTopo />
+            <View style={styles.container}>
+                <View style={styles.card}>
+                    <View style={styles.userInfoContainer}>
+                        <Image source={require('../../assets/Perfil.png')} style={styles.profileImage} />
+                        <Text style={styles.greetingText}>Olá, <Text style={styles.userName}>{nome}</Text>!</Text>
+                    </View>
                     <View style={styles.buttonContainer}>
-                    <View style={styles.buttonRow}>
-                        <TouchableOpacity style={styles.buttonWithText} onPress={() => { }}>
-                            <Image source={require('../../assets/local.png')} style={styles.imageButton} />
-                            <Text style={styles.buttonText}>Meus Endereços</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonWithText} onPress={() => { }}>
-                            <Image source={require('../../assets/avaliar.png')} style={styles.imageButton} />
-                            <Text style={styles.buttonText}>Avaliação</Text>
-                        </TouchableOpacity>
+                        <View style={styles.buttonRow}>
+                            <TouchableOpacity style={styles.buttonWithText} onPress={() => { }}>
+                                <Image source={require('../../assets/local.png')} style={styles.imageButton} />
+                                <Text style={styles.buttonText}>Meus Endereços</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.buttonWithText} onPress={() => { }}>
+                                <Image source={require('../../assets/avaliar.png')} style={styles.imageButton} />
+                                <Text style={styles.buttonText}>Avaliação</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View style={styles.buttonRow}>
+                            <TouchableOpacity style={styles.buttonWithText} onPress={() => { }}>
+                                <Image source={require('../../assets/Doar.png')} style={styles.imageButton} />
+                                <Text style={styles.buttonText}>Doações</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity style={styles.buttonWithText} onPress={handleEditarPerfil}>
+                                <Image source={require('../../assets/editar.png')} style={styles.imageButton} />
+                                <Text style={styles.buttonText}>Editar Perfil</Text>
+                            </TouchableOpacity>
+                        </View>
+                        <View>
+                            <TouchableOpacity style={[styles.buttonWithText, styles.singleButton]} onPress={() => navigation.navigate('Config')}>
+                                <Image source={require('../../assets/configs.png')} style={styles.imageButton} />
+                                <Text style={styles.buttonText}>Configurações do Aplicativo</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
-                    <View style={styles.buttonRow}>
-                        <TouchableOpacity style={styles.buttonWithText} onPress={() => { }}>
-                            <Image source={require('../../assets/Doar.png')} style={styles.imageButton} />
-                            <Text style={styles.buttonText}>Doações</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonWithText} onPress={handleEditarPerfil}>
-                            <Image source={require('../../assets/editar.png')} style={styles.imageButton} />
-                            <Text style={styles.buttonText}>Editar Perfil</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View>
-                    <TouchableOpacity style={[styles.buttonWithText, styles.singleButton]} onPress={() => navigation.navigate('Config')}>
-                        <Image source={require('../../assets/configs.png')} style={styles.imageButton} />
-                        <Text style={styles.buttonText}>Configurações do Aplicativo</Text>
-                    </TouchableOpacity>
                 </View>
-                </View>                
             </View>
-        </View>
+        </>
     );
 }
 
