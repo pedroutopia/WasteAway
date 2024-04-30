@@ -8,7 +8,7 @@ import { Buscar } from './screens/Buscar';
 import { Carrinho } from './screens/Carrinho';
 import { Pedidos } from './screens/Pedidos';
 import { Perfil } from './screens/Perfil';
-
+import { Config } from './screens/Configurações';
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -145,6 +145,10 @@ function Auth() {
                 }}
             />
             <Stack.Screen name="Cadastro" component={Cadastro}
+                options={{
+                }}
+            />
+            <Stack.Screen name="Config" component={Config}
                 options={{
                 }}
             />
