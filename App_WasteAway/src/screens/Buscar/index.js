@@ -1,7 +1,11 @@
 import { Text } from "react-native";
+import LogoTopo from "../../components/LogoTopo";
 
-export function Buscar () {
+export function Buscar() {
     return (
-        <Text>Buscar</Text>
+        <>
+            <LogoTopo />
+            <Text>Buscar</Text>
+        </>
     )
 }
