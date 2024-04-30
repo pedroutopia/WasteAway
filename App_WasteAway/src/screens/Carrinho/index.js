@@ -1,7 +1,11 @@
 import { Text } from "react-native";
+import LogoTopo from "../../components/LogoTopo";
 
 export function Carrinho () {
     return (
-        <Text>Carrinho</Text>
+        <>
+            <LogoTopo/>
+            <Text>Carrinho</Text>
+        </>
     )
 }
