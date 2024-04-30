@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image, Dimensions } 
+from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export function Perfil() {
     const [editing, setEditing] = useState(false);
     const [nome, setNome] = useState('Peu do Ovo');
 
+    const navigation = useNavigation()
     const handleEditarPerfil = () => {
         setEditing(!editing);
     };
@@ -38,7 +41,7 @@ export function Perfil() {
                         </TouchableOpacity>
                     </View>
                     <View>
-                    <TouchableOpacity style={[styles.buttonWithText, styles.singleButton]} onPress={() => { }}>
+                    <TouchableOpacity style={[styles.buttonWithText, styles.singleButton]} onPress={() => navigation.navigate('Config')}>
                         <Image source={require('../../assets/configs.png')} style={styles.imageButton} />
                         <Text style={styles.buttonText}>Configurações do Aplicativo</Text>
                     </TouchableOpacity>
