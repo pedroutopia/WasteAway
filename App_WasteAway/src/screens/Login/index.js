@@ -21,7 +21,7 @@ export default function Login() {
 
                                 <Text style={styles.inputTitle}>Senha</Text>
                                 <TextInput style={styles.placeHolder} secureTextEntry={true} placeholder='Digite sua senha...' placeholderTextColor="#FFF"></TextInput>
-                                <Text style={styles.forgotPassword} onPress={() => navigation.navigate('Cadastro')} >Cadastrar-se</Text>
+                                <Text style={styles.forgotPassword} onPress={() => navigation.navigate('Cadastro')}>Cadastrar-se</Text>
                             </View>
                             <TouchableOpacity onPress={() => navigation.navigate('Home')} >
                                 <View style={styles.button}>
