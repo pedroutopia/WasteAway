@@ -1,4 +1,4 @@
-import { StyleSheet, SafeAreaView, Text, View, ScrollView, Image } from "react-native";
+import { StyleSheet, SafeAreaView, ScrollView, } from "react-native";
 import BoxEmpresas from "../../components/BoxEmpresa";
 import LogoTopo from "../../components/LogoTopo";
 
