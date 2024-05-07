@@ -1,10 +1,27 @@
 import { useNavigation } from '@react-navigation/native';
 import { Image, StyleSheet, Text, TextInput, TouchableOpacity, View, } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import '../../utils/i18n'
+
+import {} from 'react-i18next'
+
+import { useTranslation } from 'react-i18next';
 
 export default function Login() {
 
+    const {t, i18n} = useTranslation();
+
     const navigation = useNavigation()
+
+    const changeLang = value => {
+        i18n.changeLanguage(value)
+        .then( () => {
+            console.log('LINGUAGEM ALTERADA')
+        })
+        .catch( (err) => {
+            console.log(err)
+        })
+    }
 
     return (
         <>
@@ -13,20 +30,39 @@ export default function Login() {
                 <View>
                     <Text style={styles.screenTitle}>Login</Text>
                 </View>
+
+                <View style={styles.containerButton}>
+                    <TouchableOpacity style={styles.buttonLang} onPress={() => changeLang('pt')}>
+                        <Text style={styles.textLang}>
+                            {t('Português')}
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.buttonLang} onPress={() => changeLang('en')}>
+                        <Text style={styles.textLang}>
+                            {t('Inglês')}
+                        </Text>
+                    </TouchableOpacity>
+                </View>
                         <View style={styles.mainContent}>
 
                             <View style={styles.inputsBox}>
-                                <Text style={styles.inputTitle}>E-mail</Text>
-                                <TextInput style={styles.placeHolder} placeholder='Digite seu e-mail...' placeholderTextColor="#FFF"></TextInput>
+                                <Text style={styles.inputTitle}>
+                                    {t('E-mail')}
+                                </Text>
+                                <TextInput style={styles.placeHolder} placeholder={t('Digite seu e-mail...')} placeholderTextColor="#FFF"></TextInput>
 
-                                <Text style={styles.inputTitle}>Senha</Text>
-                                <TextInput style={styles.placeHolder} secureTextEntry={true} placeholder='Digite sua senha...' placeholderTextColor="#FFF"></TextInput>
-                                <Text style={styles.forgotPassword} onPress={() => navigation.navigate('Cadastro')}>Cadastrar-se</Text>
+                                <Text style={styles.inputTitle}>
+                                    {t('Senha')}
+                                </Text>
+                                <TextInput style={styles.placeHolder} secureTextEntry={true} placeholder={t('Digite sua senha...')} placeholderTextColor="#FFF"></TextInput>
+                                <Text style={styles.forgotPassword} onPress={() => navigation.navigate('Cadastro')}>{t('Cadastrar-se')}</Text>
                             </View>
                             <TouchableOpacity onPress={() => navigation.navigate('Home')} >
                                 <View style={styles.button}>
 
-                                    <Text style={styles.buttonText}>Acessar</Text>
+                                    <Text style={styles.buttonText}>
+                                        {t('Acessar')}
+                                    </Text>
 
                                 </View>
                             </TouchableOpacity>
@@ -61,7 +97,6 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 50,
         fontWeight: '600',
-        paddingBottom: 30,
     },
     mainContent: {
         padding: 20,
@@ -121,5 +156,21 @@ const styles = StyleSheet.create({
     imgLogoEsc: {
         height: 50,
         width: 200,
+    },
+    containerButton: {
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        padding: 10,
+    },
+    buttonLang: {
+        backgroundColor: 'orange',
+        padding: 10,
+        marginHorizontal: 5,
+        borderRadius: 5,
+    },
+    textLang: {
+        color: 'white',
+        fontWeight: 'bold',
     }
 })
